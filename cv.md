@@ -47,8 +47,15 @@ self-realization, achievement of material independence, the possibility of devel
 * [Sedona](https://github.com/Tatsiana-Vaitovich/sedona)
 * [Keksobooking](https://github.com/Tatsiana-Vaitovich/keksobooking)
 
+## Work experience: 
+* Educational institution "Vitebsk state industrial and technological college", teacher of special subjects (2005-2018).
+* "Kletsky production and food plant", technician-technologist (2002-2004).
+
 ## Education: 
-I study frontend independently (2 years).
+* Studying Frontend independently (2 years).
+* "Faculty of advanced training in pedagogy and psychology" (2008-2010).
+* "Mogilev state university of food", process engineer (2002-2008).
+* "Pinsk technical school of meat and dairy industry", technician-technologist (1998-2002).
 
 ## English: 
-level A2.
+level A2. 
