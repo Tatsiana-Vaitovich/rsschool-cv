@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.footer {
+  flex: 0 1 auto;
+}
