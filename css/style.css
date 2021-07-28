@@ -9,15 +9,30 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   min-height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-.content {
+.main {
   flex: 1 1 auto;
 }
 
 .footer {
   flex: 0 1 auto;
 }
+
+.columns {
+  display: flex;
+}
+
+.left-col {
+  flex: 0 0 40%;
+}
+
+.right-col {
+  flex: 0 0 auto;
+}
+
+
