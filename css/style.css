@@ -39,6 +39,23 @@
   url("../font/raleway-semibold-webfont.ttf") format("ttf");
 }
 
+/* стили для текста */
+.caption {
+  font-family: "Raleway Bold";
+  font-size: 2em;
+  text-align: left;
+  color: rgb(94, 83, 115);
+}
+
+.caption--semibold {
+  font-family: "Raleway Semibold";
+  font-size: 1.5em;
+}
+
+.text {
+  font-family: "Raleway Regular";
+  color: rgb(94, 83, 115);
+}
 
 * {
   box-sizing: border-box;
@@ -94,6 +111,10 @@ body {
   flex: 0 0 auto;
 }
 
+.header {
+
+}
+
 .header__img-wrapper {
   width: 100%;
 }
@@ -106,11 +127,48 @@ body {
   border-radius: 50%;
 }
 
-.caption {
-  font-family: "Raleway Bold";
-  text-align: center;
-  color: rgb(94, 83, 115);
+.contact {
+
 }
+
+.contact__list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.contact__text {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact__text::before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  background-image: url("/img/icons-e-mail.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.contact__text--github::before {
+  background-image: url("/img/icons-github.png");
+}
+
+.contact__text--address::before {
+  background-image: url("/img/icons-map-pin.png");
+}
+
+.contact__text {
+}
+
+
+
+
+
+
 
 
 
