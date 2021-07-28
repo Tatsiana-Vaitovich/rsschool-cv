@@ -108,11 +108,14 @@ body {
   width: 80%;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 20px 0;
   overflow: hidden;
 }
 
 .main {
   flex: 1 1 auto;
+  border: 3px solid rgb(94, 83, 115);
+  border-radius: 5px;
 }
 
 .footer {
@@ -130,7 +133,7 @@ body {
 }
 
 .right-col {
-  flex: 0 0 auto;
+  flex: 0 0 60%;
   padding: 20px;
 }
 
