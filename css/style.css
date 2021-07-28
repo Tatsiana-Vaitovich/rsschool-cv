@@ -1,10 +1,67 @@
+/* подключаем нестандартный шрифт */
+@font-face {
+  font-family: "Raleway Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Regular"),  /*директива local() позволяет ссылаться на шрифт и загружать его, а также использовать шрифты, установленные на устройстве пользователя*/
+  url("../font/raleway-regular-webfont.woff2") format("woff2"),
+  url("../font/raleway-regular-webfont.woff") format("woff"),
+  url("../font/raleway-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Bold"),
+  url("../font/raleway-bold-webfont.woff2") format("woff2"),
+  url("../font/raleway-bold-webfont.woff") format("woff"),
+  url("../font/raleway-bold-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway light";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway light"),
+  url("../font/raleway-light-webfont.woff2") format("woff2"),
+  url("../font/raleway-light-webfont.woff") format("woff"),
+  url("../font/raleway-light-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Semibold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway SemiBold"),
+  url("../font/raleway-semibold-webfont.woff2") format("woff2"),
+  url("../font/raleway-semibold-webfont.woff") format("woff"),
+  url("../font/raleway-semibold-webfont.ttf") format("ttf");
+}
+
+
 * {
   box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin-top: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
   height: 100%;
 }
+
 
 .wrapper {
   display: flex;
@@ -29,10 +86,33 @@ body {
 
 .left-col {
   flex: 0 0 40%;
+  padding: 10px;
+  background-color: rgb(24, 181, 164, .5);
 }
 
 .right-col {
   flex: 0 0 auto;
 }
+
+.header__img-wrapper {
+  width: 100%;
+}
+
+.header__img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(236, 232, 157);
+  border-radius: 50%;
+}
+
+.caption {
+  font-family: "Raleway Bold";
+  text-align: center;
+  color: rgb(94, 83, 115);
+}
+
+
+
 
 
