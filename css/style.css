@@ -107,6 +107,18 @@ h3 {
   background-color:rgb(236, 232, 157);
 }
 
+.footer__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.footer__wrapper div {
+  flex: 0 0 30%;
+}
+
 .columns {
   display: flex;
 }
