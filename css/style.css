@@ -69,14 +69,9 @@
 
 .card__content {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-family: "Raleway Regular";
   color: rgb(94, 83, 115);
-}
-
-.no-marked-list {
-  padding-left: 0;
-  list-style-type: none;
 }
 
 * {
@@ -153,35 +148,52 @@ body {
   border-radius: 50%;
 }
 
-.contact {
-
+.no-marked-list {
+  padding-left: 0;
+  list-style-type: none;
 }
 
-.contact__text {
+.no-marked-list:last-child {
+  margin-bottom: 0;
+}
+
+.no-marked-list__item {
+  margin-bottom: 15px;
+}
+
+.no-marked-list__text {
   display: flex;
   flex-direction: row;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.contact__text::before {
+.no-marked-list__text::before {
   content: "";
   display: block;
   width: 1em;
   height: 1em;
   margin-right: 10px;
-  background-image: url("/img/icons-e-mail.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
-.contact__text--github::before {
-  background-image: url("/img/icons-github.png");
+.no-marked-list__text--e-mail::before {
+  background-image: url("/img/icon-e-mail.png");
 }
 
-.contact__text--address::before {
-  background-image: url("/img/icons-map-pin.png");
+.no-marked-list__text--github::before {
+  background-image: url("/img/icon-github.png");
 }
 
+.no-marked-list__text--address::before {
+  background-image: url("/img/icon-map-pin.png");
+}
+
+.no-marked-list__text--tick::before {
+  background-image: url("/img/icon-tick.png");
+}
 
 
 
