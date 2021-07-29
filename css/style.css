@@ -108,15 +108,18 @@ h3 {
   display: flex;
 }
 
+.left-col,
+.right-col {
+  padding: 40px 20px;
+}
+
 .left-col {
   flex: 0 0 40%;
-  padding: 20px;
   background-color: rgb(24, 181, 164, .5);
 }
 
 .right-col {
   flex: 0 0 60%;
-  padding: 20px;
 }
 
 .header {
@@ -251,6 +254,12 @@ h3 {
 .table tr td:nth-child(1) {
   font-weight: bold;
 }
+
+.languages ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
 
 
 
