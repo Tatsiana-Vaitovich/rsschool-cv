@@ -109,14 +109,24 @@ h3 {
 
 .footer__wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: 0 auto;
   padding: 10px;
 }
 
-.footer__wrapper div {
-  flex: 0 0 30%;
+.footer__coll {
+  flex: 0 0 20%;
+}
+
+.click-here {
+  display: block;
+}
+
+.click-here__img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .columns {
