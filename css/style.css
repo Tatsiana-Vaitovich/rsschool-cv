@@ -82,6 +82,7 @@ h2 {
 
 h3 {
   font-size: 1.3em;
+  margin-bottom: 10px;
 }
 
 .wrapper {
@@ -90,18 +91,20 @@ h3 {
   max-width: 1024px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   overflow: hidden;
 }
 
 .main {
   flex: 1 1 auto;
+  margin: 20px 0;
   border: 3px solid rgb(94, 83, 115);
   border-radius: 5px;
 }
 
 .footer {
   flex: 0 1 auto;
+  background-color:rgb(236, 232, 157);
 }
 
 .columns {
@@ -110,20 +113,31 @@ h3 {
 
 .left-col,
 .right-col {
-  padding: 40px 20px;
+  padding: 40px 0;
 }
 
 .left-col {
-  flex: 0 0 40%;
+  flex: 0 0 55%;
   background-color: rgb(24, 181, 164, .5);
 }
 
 .right-col {
-  flex: 0 0 60%;
+  flex: 0 0 45%;
 }
 
-.header {
+.right-col .card__content:nth-last-child(-n+1),
+.left-col .card__content:nth-last-child(-n+1) {
+  margin-bottom: 0;
+}
 
+.right-col__wrapper,
+.left-col__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
 }
 
 .header__img-wrapper {
@@ -144,21 +158,21 @@ h3 {
   margin-bottom: 25px;
 }
 
-.card {
-
-}
-
 .card__caption,
 .projects__link {
   margin-bottom: 25px;
 }
 
+.card__caption {
+  display: block;
+}
+
 .card__caption::after {
   content: "";
   display: block;
-  width: 80%;
+  width: 100%;
   margin-top: 5px;
-  border-bottom:3px solid rgb(236, 232, 157);
+  border-bottom: 5px solid rgb(236, 232, 157);
 }
 
 .card__content {
@@ -193,10 +207,9 @@ h3 {
 .projects__link::before {
   content: "";
   display: block;
-  width: 1em;
-  height: 1em;
+  width: 1.3em;
+  height: 1.3em;
   margin-right: 10px;
-  margin-top: 3px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -218,12 +231,9 @@ h3 {
   background-image: url("/img/icon-tick.png");
 }
 
-.projects {
-
-}
-
 .projects__link {
   display: flex;
+  font-family: "Raleway Bold";
   text-decoration: none;
 }
 
@@ -235,10 +245,6 @@ h3 {
   width: 80%;
   border-collapse: collapse;
 }
-
-/* .table th {
-  text-align: center;
-} */
 
 .table th,
 .table td {
@@ -256,8 +262,13 @@ h3 {
 }
 
 .languages ul {
-  list-style-type: square;
   margin-left: 20px;
+  font-weight: bold;
+  list-style-type: square;
+}
+
+.languages span {
+  font-weight: normal;
 }
 
 
