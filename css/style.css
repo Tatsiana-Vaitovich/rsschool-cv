@@ -39,43 +39,10 @@
   url("../font/raleway-semibold-webfont.ttf") format("ttf");
 }
 
-/* стили для текста */
-.caption {
-  font-family: "Raleway Bold";
-  font-size: 2em;
-  text-align: left;
-  color: rgb(94, 83, 115);
-}
-
-.card {
-
-}
-
-.card__caption {
-  margin-top: 0;
-  font-family: "Raleway Semibold";
-  font-size: 1.5em;
-  text-align: left;
-  color: rgb(94, 83, 115)
-}
-
-.card__caption::after {
-  content: "";
-  display: block;
-  width: 80%;
-  margin-top: 5px;
-  border-bottom:3px solid rgb(236, 232, 157);
-}
-
-.card__content {
-  margin-top: 0;
-  margin-bottom: 50px;
-  font-family: "Raleway Regular";
-  color: rgb(94, 83, 115);
-}
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .visually-hidden {
@@ -94,8 +61,28 @@
 
 body {
   height: 100%;
+  font-family: "Raleway Regular";
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  text-align: left;
+  color: rgb(94, 83, 115);
 }
 
+h1 {
+  font-family: "Raleway Bold";
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: "Raleway Semibold";
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
 
 .wrapper {
   display: flex;
@@ -137,7 +124,8 @@ body {
 }
 
 .header__img-wrapper {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto 25px auto;
 }
 
 .header__img {
@@ -146,6 +134,36 @@ body {
   margin: 0 auto;
   border: 5px solid rgb(236, 232, 157);
   border-radius: 50%;
+}
+
+.header__caption {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.card {
+
+}
+
+.card__caption,
+.projects__link {
+  margin-bottom: 25px;
+}
+
+.card__caption::after {
+  content: "";
+  display: block;
+  width: 80%;
+  margin-top: 5px;
+  border-bottom:3px solid rgb(236, 232, 157);
+}
+
+.card__content {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-family: "Raleway Regular";
+  line-height: 1.5;
+  color: rgb(94, 83, 115);
 }
 
 .no-marked-list {
@@ -168,12 +186,14 @@ body {
   margin-bottom: 0;
 }
 
-.no-marked-list__text::before {
+.no-marked-list__text::before,
+.projects__link::before {
   content: "";
   display: block;
   width: 1em;
   height: 1em;
   margin-right: 10px;
+  margin-top: 3px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -195,8 +215,18 @@ body {
   background-image: url("/img/icon-tick.png");
 }
 
+.projects {
 
+}
 
+.projects__link {
+  display: flex;
+  text-decoration: none;
+}
+
+.projects__link::before {
+  background-image: url("/img/icon-link.png");
+}
 
 
 
