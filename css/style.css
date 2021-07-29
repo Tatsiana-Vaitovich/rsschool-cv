@@ -87,7 +87,7 @@ h3 {
 .wrapper {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  max-width: 1024px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 20px 0;
@@ -228,6 +228,29 @@ h3 {
   background-image: url("/img/icon-link.png");
 }
 
+.table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+/* .table th {
+  text-align: center;
+} */
+
+.table th,
+.table td {
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 2px solid rgb(94, 83, 115);
+}
+
+.table tr:nth-last-child(-n+1) td {
+  border-bottom: none;
+}
+
+.table tr td:nth-child(1) {
+  font-weight: bold;
+}
 
 
 
