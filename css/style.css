@@ -151,12 +151,14 @@ footer__wrapper-rows {
 }
 
 .left-col {
-  flex: 0 0 55%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 60%;
   background-color: rgb(24, 181, 164, .5);
 }
 
 .right-col {
-  flex: 0 0 45%;
+  flex: 0 1 auto;
 }
 
 .right-col .card__content:nth-last-child(-n+1),
