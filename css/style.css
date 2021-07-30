@@ -91,15 +91,16 @@ h3 {
   max-width: 1024px;
   min-height: 100vh;
   margin: 0 auto;
-  /* padding: 20px 0; */
+  padding: 20px 0;
   overflow: hidden;
+  border: 5px solid rgb(94, 83, 115);
+  border-radius: 5px
+
 }
 
 .main {
   flex: 1 1 auto;
-  margin: 20px 0;
-  border: 3px solid rgb(94, 83, 115);
-  border-radius: 5px;
+  border-bottom: 3px solid rgb(94, 83, 115);
 }
 
 .footer {
@@ -107,7 +108,19 @@ h3 {
   background-color:rgb(236, 232, 157);
 }
 
-.footer__wrapper {
+footer__wrapper-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__data {
+  padding: 0 10px 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer__wrapper-coll {
   display: flex;
   justify-content: space-around;
   align-items: center;
