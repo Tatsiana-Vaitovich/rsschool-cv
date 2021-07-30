@@ -90,11 +90,10 @@ h3 {
   flex-direction: column;
   max-width: 1024px;
   min-height: 100vh;
-  margin: 0 auto;
-  padding: 20px 0;
+  margin: 20px auto;
   overflow: hidden;
   border: 5px solid rgb(94, 83, 115);
-  border-radius: 5px
+  border-radius: 10px
 
 }
 
