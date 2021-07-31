@@ -9,18 +9,21 @@
 
 ## About me
 * ### Personal qualities:
-responsibility, decency, goodwill, learning ability, the desire to improve skills.
+responsibility, honesty, goodwill, fast learner, eagerness to improve my skills
 
-* ### Personal goals in the work:
-self-realization, achievement of material independence, the possibility of developing personal and professional qualities.
+* ###  Professional goals:
+self-realization, financial independence, personal and professional growth
 
 ## Professional skills in the IT area:
-1) Knowledge of the basics of **HTML** and **CSS**.
-2) Practical skills of Frontend development using **BEM** methodology, **Gulp** task automation tool, **LESS** style preprocessor, **Git** version control system.
-3) Knowledge of the basics of the **semantic approach** to layout, the principles of interface **accessibility**,**adaptive layout** techniques and the availability of practical skills in their use.
-4) Knowledge of the basics of **JavaScript**.
-5) Knowledge of the basics of **algorithms and data structures**.
-6) Knowledge of the basics of **OOP**.
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **BEM** methodology 
+* **Gulp** task automation tool
+* **LESS** style preprocessor
+* **Git** version control system
+* Basics of of **algorithms and data structures**
+* Basics of **OOP**
 
 ## Сode examples: 
 ```
@@ -48,14 +51,14 @@ self-realization, achievement of material independence, the possibility of devel
 * [Keksobooking](https://github.com/Tatsiana-Vaitovich/keksobooking)
 
 ## Work experience: 
-* Educational institution "Vitebsk state industrial and technological college", teacher of special subjects (2005-2018).
-* "Kletsky production and food plant", technician-technologist (2002-2004).
+* Special subjects teacher at Vitebsk State Industrial and Technological College, 2005-2018
+* Technologist at Production and Food Plant of Kletsk, 2002-2004
 
 ## Education: 
-* Studying Frontend independently (2 years).
-* "Faculty of advanced training in pedagogy and psychology" (2008-2010).
-* "Mogilev state university of food", process engineer (2002-2008).
-* "Pinsk technical school of meat and dairy industry", technician-technologist (1998-2002).
+* Studying Frontend independently for 2 years
+* Advanced Training in Pedagogy and Psychology Faculty, 2008-2010
+* Mogilev State University of Food, 2002-2008
+* Pinsk Technical School of Meat and Dairy Industry, 1998-2002
 
 ## English: 
 level A2. 
