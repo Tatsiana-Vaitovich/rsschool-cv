@@ -61,8 +61,7 @@
   overflow: hidden;
 }
 
-body {
-  height: 100%;
+.overall {
   font-family: "Raleway Regular", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
@@ -92,12 +91,12 @@ h3 {
   display: flex;
   flex-direction: column;
   max-width: 1024px;
+  min-width: 320px;
   /* min-height: 100vh; */
   margin: 20px auto;
-  overflow: hidden;
   border: 5px solid rgb(94, 83, 115);
-  border-radius: 10px
-
+  border-radius: 10px;
+  overflow: auto;
 }
 
 .main {
@@ -161,16 +160,14 @@ footer__wrapper-rows {
   padding: 40px 0;
 }
 
-/* разрешаю left-col растягиваться за счет сужения right-col */
 .left-col {
-  flex-grow: 1;
-  flex-shrink: 1;
-  min-width: 60%;
+  width: 40%;
+  min-width: 250px;
   background-color: rgb(24, 181, 164, .5);
 }
 
 .right-col {
-  flex: 0 1 auto;
+  width: 60%;
 }
 
 /* убираю нижний отступ у последнего элемна в колонке */
