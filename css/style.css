@@ -4,9 +4,9 @@
   font-weight: normal;
   font-style: normal;
   src: local("Raleway Regular"),  /*директива local() позволяет ссылаться на шрифт и загружать его, а также использовать шрифты, установленные на устройстве пользователя*/
-  url("../font/raleway-regular-webfont.woff2") format("woff2"),
-  url("../font/raleway-regular-webfont.woff") format("woff"),
-  url("../font/raleway-regular.ttf") format("ttf");
+  url("/fonts/raleway-regular-webfont.woff2") format("woff2"),
+  url("/fonts/raleway-regular-webfont.woff") format("woff"),
+  url("/fonts/raleway-regular.ttf") format("ttf");
 }
 
 @font-face {
@@ -14,9 +14,9 @@
   font-weight: normal;
   font-style: normal;
   src: local("Raleway Bold"),
-  url("../font/raleway-bold-webfont.woff2") format("woff2"),
-  url("../font/raleway-bold-webfont.woff") format("woff"),
-  url("../font/raleway-bold-webfont.ttf") format("ttf");
+  url("../fonts/raleway-bold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-bold-webfont.woff") format("woff"),
+  url("../fonts/raleway-bold-webfont.ttf") format("ttf");
 }
 
 @font-face {
@@ -24,9 +24,9 @@
   font-weight: normal;
   font-style: normal;
   src: local("Raleway light"),
-  url("../font/raleway-light-webfont.woff2") format("woff2"),
-  url("../font/raleway-light-webfont.woff") format("woff"),
-  url("../font/raleway-light-webfont.ttf") format("ttf");
+  url("../fonts/raleway-light-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-light-webfont.woff") format("woff"),
+  url("../fonts/raleway-light-webfont.ttf") format("ttf");
 }
 
 @font-face {
@@ -34,9 +34,9 @@
   font-weight: normal;
   font-style: normal;
   src: local("Raleway SemiBold"),
-  url("../font/raleway-semibold-webfont.woff2") format("woff2"),
-  url("../font/raleway-semibold-webfont.woff") format("woff"),
-  url("../font/raleway-semibold-webfont.ttf") format("ttf");
+  url("../fonts/raleway-semibold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-semibold-webfont.woff") format("woff"),
+  url("../fonts/raleway-semibold-webfont.ttf") format("ttf");
 }
 
 /* устанавливаю общие стили для элементов */
@@ -268,19 +268,19 @@ footer__wrapper-rows {
 }
 
 .no-marked-list__text--e-mail::before {
-  background-image: url("/img/icon-e-mail.png");
+  background-image: url("../img/icon-e-mail.png");
 }
 
 .no-marked-list__text--github::before {
-  background-image: url("/img/icon-github.png");
+  background-image: url("../img/icon-github.png");
 }
 
 .no-marked-list__text--address::before {
-  background-image: url("/img/icon-map-pin.png");
+  background-image: url("../img/icon-map-pin.png");
 }
 
 .no-marked-list__text--tick::before {
-  background-image: url("/img/icon-tick.png");
+  background-image: url("../img/icon-tick.png");
 }
 
 /* стилизую ссылку на my projects */
@@ -292,7 +292,7 @@ footer__wrapper-rows {
 }
 
 .projects__link::before {
-  background-image: url("/img/icon-link.png");
+  background-image: url("../img/icon-link.png");
 }
 
 /* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
