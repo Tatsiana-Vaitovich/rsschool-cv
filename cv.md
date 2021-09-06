@@ -27,20 +27,12 @@ self-realization, financial independence, personal and professional growth
 
 ## Сode examples: 
 ```
-@media screen and (min-width: @tablet) {
-  .card {
-    width: @tablet/3;
-    margin: 0;
-    &--with-img {
-      flex-direction: row;
-      width: @tablet;
-      height: 256px;
-      background-color: @bc-blue;
-    }
-    &--with-img-reverse {
-      flex-direction: row-reverse;
-    }
-  }
+// ---Find the stray number
+function stray(numbers) {
+  numbers.sort();
+  let n = numbers.filter(el => el === numbers[0])
+  return n.length === 1 ? numbers[0] : numbers[numbers.length - 1];
+}
 
 ```
 
