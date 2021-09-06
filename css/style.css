@@ -1,0 +1,338 @@
+/* подключаю нестандартные шрифты */
+@font-face {
+  font-family: "Raleway Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Regular"),  /*директива local() позволяет ссылаться на шрифт и загружать его, а также использовать шрифты, установленные на устройстве пользователя*/
+  url("/fonts/raleway-regular-webfont.woff2") format("woff2"),
+  url("/fonts/raleway-regular-webfont.woff") format("woff"),
+  url("/fonts/raleway-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Bold"),
+  url("../fonts/raleway-bold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-bold-webfont.woff") format("woff"),
+  url("../fonts/raleway-bold-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway light";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway light"),
+  url("../fonts/raleway-light-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-light-webfont.woff") format("woff"),
+  url("../fonts/raleway-light-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Semibold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway SemiBold"),
+  url("../fonts/raleway-semibold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-semibold-webfont.woff") format("woff"),
+  url("../fonts/raleway-semibold-webfont.ttf") format("ttf");
+}
+
+/* устанавливаю общие стили для элементов */
+/* для универсальности использую относитльный размер em для типографики */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin-top: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.overall {
+  font-family: "Raleway Regular", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  text-align: left;
+  color: rgb(94, 83, 115);
+}
+
+h1 {
+  font-family: "Raleway Bold";
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: "Raleway Semibold";
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+/* центрирую основное содержимое в окне браузера */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  min-width: 320px;
+  /* min-height: 100vh; */
+  margin: 20px auto;
+  border: 5px solid rgb(94, 83, 115);
+  border-radius: 10px;
+  overflow: auto;
+}
+
+.main {
+  flex: 1 1 auto;
+  border-bottom: 3px solid rgb(94, 83, 115);
+}
+
+/* === footer === */
+
+.footer {
+  flex: 0 1 auto;
+  background-color:rgb(236, 232, 157);
+}
+
+/* разбиваю footer на flex-блоки: 1)горизонтальный flex: блок со ссылками и датой; 2)flex-блок со ссылками содержит 3 вертикальные колонки для каждой ссылки*/
+footer__wrapper-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__data {
+  padding: 0 10px 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer__wrapper-col {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.footer__col {
+  flex: 0 0 20%;
+}
+
+/* для стилизации ссылок использую универсальный BEM-блок */
+.click-here {
+  display: block;
+  padding: 5px;
+}
+
+.click-here__img {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+/* === main === */
+
+/* разбиваю основную часть на 2 вертикальные колонки */
+.columns {
+  display: flex;
+}
+
+.left-col,
+.right-col {
+  padding: 40px 0;
+}
+
+.left-col {
+  width: 40%;
+  min-width: 250px;
+  background-color: rgb(24, 181, 164, .5);
+}
+
+.right-col {
+  width: 60%;
+}
+
+/* убираю нижний отступ у последнего элемна в колонке */
+.right-col .card:nth-last-child(-n+1) .card__content,
+.left-col .card:nth-last-child(-n+1) .card__content {
+  margin-bottom: 0;
+}
+
+/* центрирую содержимое в колонках */
+.right-col__wrapper,
+.left-col__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header__img-wrapper {
+  width: 80%;
+  margin: 0 auto 25px auto;
+}
+
+/* задаю стили для фото */
+.header__img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(236, 232, 157);
+  border-radius: 50%;
+}
+
+.header__caption {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* использую универсальный BEM-блок card для каждого пункта CV */
+.card__caption,
+.projects__link {
+  margin-bottom: 25px;
+}
+
+.card__caption {
+  display: block;
+}
+
+/* добавляю черту под заголовком пункта */
+.card__caption::after {
+  content: "";
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 5px solid rgb(236, 232, 157);
+}
+
+.card__content {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-family: "Raleway Regular";
+  line-height: 1.5;
+  color: rgb(94, 83, 115);
+}
+
+/* использую универсальный BEM-блок no-marked-list для стилизации списков, в которых убираю маркеры по умолчанию и использую кастомное оформление */
+.no-marked-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.no-marked-list:last-child {
+  margin-bottom: 0;
+}
+
+.no-marked-list__item {
+  margin-bottom: 15px;
+}
+
+.no-marked-list__text {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* также как для пунктов маркированного списка, добавляю маркер "рука" для ссылки на my projects */
+.no-marked-list__text::before,
+.projects__link::before {
+  content: "";
+  display: block;
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.no-marked-list__text--e-mail::before {
+  background-image: url("../img/icon-e-mail.png");
+}
+
+.no-marked-list__text--github::before {
+  background-image: url("../img/icon-github.png");
+}
+
+.no-marked-list__text--address::before {
+  background-image: url("../img/icon-map-pin.png");
+}
+
+.no-marked-list__text--tick::before {
+  background-image: url("../img/icon-tick.png");
+}
+
+/* стилизую ссылку на my projects */
+.projects__link {
+  display: inline-flex;
+  padding: 5px;
+  font-family: "Raleway Bold";
+  text-decoration: none;
+}
+
+.projects__link::before {
+  background-image: url("../img/icon-link.png");
+}
+
+/* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
+.projects__link:hover,
+.projects__link:focus,
+.click-here:hover,
+.click-here:focus {
+  background: rgb(236, 232, 157);
+  outline: 2px solid rgb(94, 83, 115);
+}
+
+/* использую универсальный BEM-блок table для стилизации таблиц */
+/* убираю двойные линии border, задав border-collapse для всей таблицы */
+.table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 2px solid rgb(94, 83, 115);
+}
+
+.table tr:nth-last-child(-n+1) td {
+  border-bottom: none;
+}
+
+.table tr td:nth-child(1) {
+  font-weight: bold;
+}
+
+/* для блока languages использую стандартные маркеры */
+.languages ul {
+  margin-left: 20px;
+  font-weight: bold;
+  list-style-type: square;
+}
+
+.languages span {
+  font-weight: normal;
+}
