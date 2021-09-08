@@ -9,17 +9,47 @@
 </head>
 <body class="overall">
   <div class="wrapper">
+    <header>
+      <div class="header__logo">
+        <h1>Tatsiana Baltrushevich</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="menu menu--row">
+          <li class="menu__item">
+            <a class="menu__link" href="#contact">Contact</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#profile">Profile</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#skills">Skills</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#projects">Projects</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#work-experience">Work experience</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#education">Education</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#languages">Languages</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main class="main">
       <div class="columns">
         <div class="left-col">
           <div class="left-col__wrapper">
-            <header class="header">
-              <div class="header__img-wrapper">
-                <img class="header__img" src="img/photo.jpg" alt="Tatsiana Baltrushevich">
+            <figure class="my-photo">
+              <div class="my-photo__img-wrapper">
+                <img class="my-photo__img" src="img/photo.jpg" alt="Tatsiana Baltrushevich">
               </div>
-              <h1 class="header__caption">Tatsiana Baltrushevich</h1>
-            </header>
-            <section class="contact card">
+              <figcaption class="my-photo__caption">Tatsiana Baltrushevich</figcaption>
+            </figure>
+            <section id="contact" class="contact card">
               <h2 class="card__caption">Contact</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -35,7 +65,7 @@
                 </ul>
               </div>
             </section>
-            <section class="profile card">
+            <section id="profile" class="profile card">
               <h2 class="card__caption">Profile</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -57,7 +87,7 @@
         </div>
         <div class="right-col">
           <div class="right-col__wrapper">
-            <section class="skills card">
+            <section id="skills" class="skills card">
               <h2 class="card__caption">Professional skills in IT</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -89,13 +119,13 @@
                 </ul>
               </div>
             </section>
-            <section class="projects card">
+            <section id="projects" class="projects card">
               <h2 class="projects__header card__caption">My Projects</h2>
               <div class="projects__content card__content">
                 <a class="projects__link" href="https://github.com/Tatsiana-Vaitovich" target="_blank">Click Here</a>
               </div>
             </section>
-            <section class="work-experience card">
+            <section id="work-experience" class="work-experience card">
               <h2 class="card__caption">Work experience</h2>
               <div class="card__content">
                 <table class="table">
@@ -119,7 +149,7 @@
                 </table>
               </div>
             </section>
-            <section class="education card">
+            <section id="education" class="education card">
               <h2 class="card__caption">Education</h2>
               <div class="card__content">
                 <table class="table">
@@ -153,7 +183,7 @@
                 </table>
               </div>
             </section>
-            <section class="languages card">
+            <section id="languages" class="languages card">
             <h2 class="card__caption">Languages</h2>
             <div class="card__content">
               <ul>
