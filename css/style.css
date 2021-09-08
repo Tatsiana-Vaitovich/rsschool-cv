@@ -99,6 +99,58 @@ h3 {
   overflow: auto;
 }
 
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+/* .menu--coll {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  max-height: 100%;
+  padding-inline-start: 0;
+} */
+
+.menu__item {
+  display: inline-block;
+  /* padding-right: 76px; */
+  /* font-family: "Robotothin";
+  font-size: @font-size4;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: @font-color-light; */
+}
+
+.menu__item:last-child {
+    padding-right: 0;
+  }
+
+/* .menu--coll .menu__item {
+  margin-right: 0;
+} */
+
+.menu__link {
+  display: inline-block;
+  padding: 5px;
+  font-family: "Raleway Bold";
+  text-decoration: none;
+  transition-property: color;
+}
+.menu__link:hover,
+.menu__link:active {
+
+}
+
+.menu__link:focus-visible {
+  outline: 3px solid
+}
+
 .main {
   flex: 1 1 auto;
   border-bottom: 3px solid rgb(94, 83, 115);
@@ -106,8 +158,10 @@ h3 {
 
 /* === footer === */
 
-.footer {
+.footer,
+.header {
   flex: 0 1 auto;
+  padding: 20px;
   background-color:rgb(236, 232, 157);
 }
 
@@ -118,7 +172,7 @@ footer__wrapper-rows {
 }
 
 .footer__data {
-  padding: 0 10px 10px;
+  /* padding: 0 10px 10px; */
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -129,7 +183,7 @@ footer__wrapper-rows {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .footer__col {
@@ -187,13 +241,13 @@ footer__wrapper-rows {
   margin: 0 auto;
 }
 
-.header__img-wrapper {
+.my-photo__img-wrapper {
   width: 80%;
   margin: 0 auto 25px auto;
 }
 
 /* задаю стили для фото */
-.header__img {
+.my-photo__img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -201,7 +255,7 @@ footer__wrapper-rows {
   border-radius: 50%;
 }
 
-.header__caption {
+.my-photo__caption {
   margin-top: 0;
   margin-bottom: 25px;
 }
@@ -296,10 +350,16 @@ footer__wrapper-rows {
 }
 
 /* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
+.menu__link:hover,
+.menu__link:active,
+.menu__link:focus-visible,
 .projects__link:hover,
-.projects__link:focus,
+.projects__link:active,
+.projects__link:focus-visible,
 .click-here:hover,
-.click-here:focus {
+.click-here:active,
+.click-here:focus-visible {
+  color:rgb(94, 83, 115);
   background: rgb(236, 232, 157);
   outline: 2px solid rgb(94, 83, 115);
 }
