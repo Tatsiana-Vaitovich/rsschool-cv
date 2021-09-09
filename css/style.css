@@ -41,8 +41,13 @@
 
 /* устанавливаю общие стили для элементов */
 /* для универсальности использую относитльный размер em для типографики */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
@@ -99,6 +104,10 @@ h3 {
   overflow: auto;
 }
 
+.header h1 {
+  margin: 0 0 10px;
+}
+
 .menu {
   display: flex;
   justify-content: space-between;
@@ -117,23 +126,11 @@ h3 {
 
 .menu__item {
   display: inline-block;
-  /* padding-right: 76px; */
-  /* font-family: "Robotothin";
-  font-size: @font-size4;
-  font-style: normal;
-  font-weight: 200;
-  line-height: 50px;
-  letter-spacing: 2px;
-  color: @font-color-light; */
 }
 
 .menu__item:last-child {
-    padding-right: 0;
-  }
-
-/* .menu--coll .menu__item {
-  margin-right: 0;
-} */
+  padding-right: 0;
+}
 
 .menu__link {
   display: inline-block;
@@ -142,10 +139,6 @@ h3 {
   text-decoration: none;
   transition-property: color;
 }
-.menu__link:hover,
-.menu__link:active {
-
-}
 
 .menu__link:focus-visible {
   outline: 3px solid
@@ -153,6 +146,7 @@ h3 {
 
 .main {
   flex: 1 1 auto;
+  border-top: 3px solid rgb(94, 83, 115);
   border-bottom: 3px solid rgb(94, 83, 115);
 }
 
@@ -161,8 +155,8 @@ h3 {
 .footer,
 .header {
   flex: 0 1 auto;
-  padding: 20px;
-  background-color:rgb(236, 232, 157);
+  padding: 10px 20px;
+  background-color:rgb(228, 228, 228);;
 }
 
 /* разбиваю footer на flex-блоки: 1)горизонтальный flex: блок со ссылками и датой; 2)flex-блок со ссылками содержит 3 вертикальные колонки для каждой ссылки*/
@@ -172,7 +166,6 @@ footer__wrapper-rows {
 }
 
 .footer__data {
-  /* padding: 0 10px 10px; */
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -241,7 +234,7 @@ footer__wrapper-rows {
   margin: 0 auto;
 }
 
-.my-photo__img-wrapper {
+.my-photo {
   width: 80%;
   margin: 0 auto 25px auto;
 }
@@ -261,11 +254,36 @@ footer__wrapper-rows {
 }
 
 /* использую универсальный BEM-блок card для каждого пункта CV */
-.card__caption,
-.projects__link {
+.card__caption {
   margin-bottom: 25px;
 }
 
+.card-project {
+  display: flex;
+  gap: 10px;
+  /* width: 80%;
+  margin: 0 auto; */
+}
+
+.card-project__link{
+  flex-basis: calc(40% - 10px);
+  position: relative;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.card-project__img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+
+.card-project__content {
+  flex-basis: calc(60% - 10px);
+}
 .card__caption {
   display: block;
 }
@@ -338,29 +356,22 @@ footer__wrapper-rows {
 }
 
 /* стилизую ссылку на my projects */
-.projects__link {
-  display: inline-flex;
-  padding: 5px;
-  font-family: "Raleway Bold";
-  text-decoration: none;
-}
-
-.projects__link::before {
-  background-image: url("../img/icon-link.png");
-}
-
 /* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
 .menu__link:hover,
 .menu__link:active,
 .menu__link:focus-visible,
-.projects__link:hover,
-.projects__link:active,
-.projects__link:focus-visible,
 .click-here:hover,
 .click-here:active,
 .click-here:focus-visible {
   color:rgb(94, 83, 115);
   background: rgb(236, 232, 157);
+  outline: 2px solid rgb(94, 83, 115);
+}
+
+.card-project__link:hover,
+.card-project__link:active,
+.card-project__link:focus-visible {
+  color: rgb(94, 83, 115);
   outline: 2px solid rgb(94, 83, 115);
 }
 
@@ -396,3 +407,25 @@ footer__wrapper-rows {
 .languages span {
   font-weight: normal;
 }
+
+/* min-width задает минимальную ширину окна браузера или экрана, к которой будут применены определенные стили. Если какое-нибудь значение будет ниже min-width, то стили будут проигнорированы */
+
+@media screen and (max-width: 420px) {
+  /* .wrapper {
+    width: 420px;
+    min-width: 320px;
+  } */
+  .menu {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .wrapper {
+    width: 760px;
+  } */
+  .menu {
+    flex-wrap: wrap;
+  }
+}
+
