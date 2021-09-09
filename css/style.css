@@ -387,7 +387,8 @@ footer__wrapper-rows {
   outline: 2px solid rgb(94, 83, 115);
 }
 
-.menu__link:visited {
+.menu__link:visited,
+.menu__link:link {
   color: rgb(94, 83, 115);
 }
 
