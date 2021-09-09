@@ -52,6 +52,12 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* свойство используется для плавной прокрутки страницы при использвании якорей */
+}
+
+
 .visually-hidden {
   position: absolute;
   width: 1px;
