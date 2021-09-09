@@ -41,11 +41,22 @@
 
 /* устанавливаю общие стили для элементов */
 /* для универсальности использую относитльный размер em для типографики */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+* {
   margin: 0;
   padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  /* свойство используется для плавной прокрутки страницы при использвании якорей */
+}
+
 
 .visually-hidden {
   position: absolute;
@@ -62,6 +73,9 @@
 }
 
 .overall {
+  /* width: 100%; */
+  min-width: 320px;
+  margin: 0 auto;
   font-family: "Raleway Regular", Arial, Helvetica, sans-serif;
   font-size: 1em;
   line-height: 1.5em;
@@ -90,25 +104,67 @@ h3 {
 .wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 1024px;
-  min-width: 320px;
-  /* min-height: 100vh; */
+  width: 80%;
+  max-width: 1000px;
   margin: 20px auto;
   border: 5px solid rgb(94, 83, 115);
   border-radius: 10px;
-  overflow: auto;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+/* .menu--coll {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  max-height: 100%;
+  padding-inline-start: 0;
+} */
+
+.menu__item {
+  display: inline-block;
+}
+
+.menu__item:last-child {
+  padding-right: 0;
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 5px;
+  font-family: "Raleway Bold";
+  text-decoration: none;
+  transition-property: color;
+}
+
+.menu__link:focus-visible {
+  outline: 3px solid
 }
 
 .main {
   flex: 1 1 auto;
+  border-top: 3px solid rgb(94, 83, 115);
   border-bottom: 3px solid rgb(94, 83, 115);
 }
 
 /* === footer === */
 
-.footer {
+.footer,
+.header {
   flex: 0 1 auto;
-  background-color:rgb(236, 232, 157);
+  padding: 10px 20px;
+  background-color:rgb(238, 238, 238);;
 }
 
 /* разбиваю footer на flex-блоки: 1)горизонтальный flex: блок со ссылками и датой; 2)flex-блок со ссылками содержит 3 вертикальные колонки для каждой ссылки*/
@@ -118,7 +174,6 @@ footer__wrapper-rows {
 }
 
 .footer__data {
-  padding: 0 10px 10px;
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -129,7 +184,7 @@ footer__wrapper-rows {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .footer__col {
@@ -148,6 +203,10 @@ footer__wrapper-rows {
   margin: 0 auto;
 }
 
+.click-here__img--rss {
+  width: 80%;
+}
+
 /* === main === */
 
 /* разбиваю основную часть на 2 вертикальные колонки */
@@ -163,7 +222,7 @@ footer__wrapper-rows {
 .left-col {
   width: 40%;
   min-width: 250px;
-  background-color: rgb(24, 181, 164, .5);
+  background-color: rgba(24, 181, 164, .5);
 }
 
 .right-col {
@@ -187,13 +246,13 @@ footer__wrapper-rows {
   margin: 0 auto;
 }
 
-.header__img-wrapper {
+.my-photo {
   width: 80%;
   margin: 0 auto 25px auto;
 }
 
 /* задаю стили для фото */
-.header__img {
+.my-photo__img {
   display: block;
   max-width: 100%;
   margin: 0 auto;
@@ -201,17 +260,42 @@ footer__wrapper-rows {
   border-radius: 50%;
 }
 
-.header__caption {
+.my-photo__caption {
   margin-top: 0;
   margin-bottom: 25px;
 }
 
 /* использую универсальный BEM-блок card для каждого пункта CV */
-.card__caption,
-.projects__link {
+.card__caption {
   margin-bottom: 25px;
 }
 
+.card-project {
+  display: flex;
+  gap: 10px;
+  /* width: 80%;
+  margin: 0 auto; */
+}
+
+.card-project__link{
+  flex-basis: calc(40% - 10px);
+  position: relative;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.card-project__img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+
+.card-project__content {
+  flex-basis: calc(60% - 10px);
+}
 .card__caption {
   display: block;
 }
@@ -284,24 +368,35 @@ footer__wrapper-rows {
 }
 
 /* стилизую ссылку на my projects */
-.projects__link {
-  display: inline-flex;
-  padding: 5px;
-  font-family: "Raleway Bold";
-  text-decoration: none;
-}
-
-.projects__link::before {
-  background-image: url("../img/icon-link.png");
-}
-
 /* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
-.projects__link:hover,
-.projects__link:focus,
+.menu__link:hover,
+.menu__link:active,
+.menu__link:focus-visible,
 .click-here:hover,
-.click-here:focus {
+.click-here:active,
+.click-here:focus-visible {
+  color:rgb(94, 83, 115);
   background: rgb(236, 232, 157);
   outline: 2px solid rgb(94, 83, 115);
+}
+
+.card-project__link:hover,
+.card-project__link:active,
+.card-project__link:focus-visible {
+  color: rgb(94, 83, 115);
+  outline: 2px solid rgb(94, 83, 115);
+}
+
+.menu__link:visited {
+  color: rgb(94, 83, 115);
+}
+
+.projects__item:last-child {
+  margin-bottom: 50px;
+}
+
+.code-example pre {
+  max-width: 100%;
 }
 
 /* использую универсальный BEM-блок table для стилизации таблиц */
@@ -335,4 +430,91 @@ footer__wrapper-rows {
 
 .languages span {
   font-weight: normal;
+}
+
+/* добавляю адаптив */
+@media screen and (max-width: 768px) {
+  .columns {
+    display: block;
+  }
+
+  .left-col,
+  .right-col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .left-col__wrapper,
+  .right-col__wrapper {
+    width: 100%;
+  }
+
+  .left-col {
+    background-color: transparent;
+  }
+
+  .my-photo,
+  .profile,
+  .projects,
+  .code-example,
+  .education,
+  .contact,
+  .skills,
+  .work-experience,
+  .languages {
+    padding: 20px;
+  }
+
+  .my-photo,
+  .profile,
+  .projects,
+  .code-example,
+  .education {
+    background-color: rgb(24, 181, 164, .5);
+  }
+
+  .projects__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .my-photo {
+    width: 100%;
+    margin:0;
+  }
+
+  .my-photo__img {
+    width: 80%;
+  }
+
+  .card__content {
+    margin-bottom: 0;
+  }
+
+  .skills .no-marked-list__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .card-project {
+    flex-direction: column;
+  }
+
+  /* реализую адаптив для таблиц */
+  .table th {
+    padding: 5px;
+  }
+
+  .table tr {
+    display: block;
+  }
+
+  .table td {
+    border-bottom: none;
+    display: block;
+  }
 }

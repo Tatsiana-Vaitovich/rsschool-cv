@@ -6,20 +6,53 @@
   <title>CV</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class="overall">
   <div class="wrapper">
+    <header class="header">
+      <div class="header__logo">
+        <h1>Tatsiana Baltrushevich</h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="menu">
+          <li class="menu__item">
+            <a class="menu__link" href="#contact">Contact</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#profile">Profile</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#skills">Skills</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#projects">Projects</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#code-example">Code example</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#work-experience">Work experience</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#education">Education</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#languages">Languages</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <main class="main">
       <div class="columns">
         <div class="left-col">
           <div class="left-col__wrapper">
-            <header class="header">
-              <div class="header__img-wrapper">
-                <img class="header__img" src="img/photo.jpg" alt="Tatsiana Baltrushevich">
-              </div>
-              <h1 class="header__caption">Tatsiana Baltrushevich</h1>
-            </header>
-            <section class="contact card">
+            <figure class="my-photo">
+              <img class="my-photo__img" src="img/photo.jpg" alt="Tatsiana Baltrushevich">
+            </figure>
+            <section id="contact" class="contact card">
               <h2 class="card__caption">Contact</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -35,7 +68,7 @@
                 </ul>
               </div>
             </section>
-            <section class="profile card">
+            <section id="profile" class="profile card">
               <h2 class="card__caption">Profile</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -53,11 +86,7 @@
                 </ul>
               </div>
             </section>
-          </div>
-        </div>
-        <div class="right-col">
-          <div class="right-col__wrapper">
-            <section class="skills card">
+            <section id="skills" class="skills card">
               <h2 class="card__caption">Professional skills in IT</h2>
               <div class="card__content">
                 <ul class="no-marked-list">
@@ -89,13 +118,75 @@
                 </ul>
               </div>
             </section>
-            <section class="projects card">
+          </div>
+        </div>
+        <div class="right-col">
+          <div class="right-col__wrapper">
+            <section id="projects" class="projects card">
               <h2 class="projects__header card__caption">My Projects</h2>
-              <div class="projects__content card__content">
-                <a class="projects__link" href="https://github.com/Tatsiana-Vaitovich" target="_blank">Click Here</a>
-              </div>
+              <ul class="no-marked-list projects__list" >
+                <li class="projects__item no-marked-list__item">
+                  <article class="card-project">
+                    <a class="card-project__link" href="https://github.com/Tatsiana-Vaitovich/keksobooking" target="_blank">
+                      <img class="card-project__img" src="img/keksobooking.jpg" alt="Keksobooking">
+                    </a>
+                    <div class="card-project__content">
+                      <h3 class="card-project__header">Keksobooking</h3>
+                      <p class="card-project__text">Java script training project</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="projects__item no-marked-list__item">
+                  <article class="card-project">
+                    <a class="card-project__link" href="https://github.com/Tatsiana-Vaitovich/sedona" target="_blank">
+                      <img class="card-project__img" src="img/sedona.jpg" alt="Sedona">
+                    </a>
+                    <div class="card-project__content">
+                      <h3 class="card-project__header">Sedona</h3>
+                      <p class="card-project__text">Made with BEM, FlexBox; adaptability are implemented and the principles of accessibility are observed</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="projects__item no-marked-list__item">
+                  <article class="card-project">
+                    <a class="card-project__link" href="https://github.com/Tatsiana-Vaitovich/ActiveBox" target="_blank">
+                      <img class="card-project__img" src="img/activeBox.jpg" alt="ActiveBox">
+                    </a>
+                    <div class="card-project__content">
+                      <h3 class="card-project__header">ActiveBox</h3>
+                      <p class="card-project__text">Training project made witn BEM, Culp and LESS</p>
+                    </div>
+                  </article>
+                </li>
+                <li class="projects__item no-marked-list__item">
+                  <article class="card-project">
+                    <a class="card-project__link" href="https://github.com/Tatsiana-Vaitovich/Roadside" target="_blank">
+                      <img class="card-project__img" src="img/roadside.jpg" alt="Roadside">
+                    </a>
+                    <div class="card-project__content">
+                      <h3 class="card-project__header">Roadside</h3>
+                      <p class="card-project__text">My first simple project made with HTML and CSS</p>
+                    </div>
+                  </article>
+                </li>
+              </ul>
             </section>
-            <section class="work-experience card">
+            <section id="code-example" class="code-example card">
+              <h2 class="code-example__header card__caption">Code example</h2>
+              <details class="card__content">
+                <summary>Find the stray number</summary>
+                <pre>
+                  <code class="html">
+  function stray(numbers) {
+    numbers.sort();
+    let n = numbers.filter(el => el === numbers[0])
+    return n.length === 1 ? numbers[0] : numbers[numbers.length - 1];
+  }
+                  </code>
+                </pre>
+              </details>
+            </section>
+            <section id="work-experience" class="work-experience card">
               <h2 class="card__caption">Work experience</h2>
               <div class="card__content">
                 <table class="table">
@@ -107,8 +198,8 @@
                     </tr>
                     <tr>
                       <td>2005-2018</td>
-                      <td >Vitebsk State Industrial and Technological College</td>
-                      <td >Special subjects teacher</td>
+                      <td>Vitebsk State Industrial and Technological College</td>
+                      <td>Special subjects teacher</td>
                     </tr>
                     <tr>
                       <td>2002-2004</td>
@@ -119,14 +210,14 @@
                 </table>
               </div>
             </section>
-            <section class="education card">
+            <section id="education" class="education card">
               <h2 class="card__caption">Education</h2>
               <div class="card__content">
                 <table class="table">
                   <tbody>
                     <tr>
                       <th>Period</th>
-                      <th>Plase</th>
+                      <th>Place</th>
                       <th>Qualification</th>
                     </tr>
                     <tr>
@@ -153,7 +244,7 @@
                 </table>
               </div>
             </section>
-            <section class="languages card">
+            <section id="languages" class="languages card">
             <h2 class="card__caption">Languages</h2>
             <div class="card__content">
               <ul>
@@ -183,7 +274,7 @@
           </div>
           <div class="rss footer__col">
             <a class="click-here" href="https://rs.school/js/" target="_blank" aria-label="Rolling scopes school">
-              <img class="click-here__img" src="https://rs.school/images/rs_school_js.svg" alt="Rolling scopes school">
+              <img class="click-here__img click-here__img--rss" src="https://rs.school/images/rs_school_js.svg" alt="Rolling scopes school">
             </a>
           </div>
           <div class="youtube footer__col">
@@ -198,5 +289,6 @@
       </div>
     </footer>
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
