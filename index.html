@@ -6,6 +6,9 @@
   <title>CV</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body class="overall">
   <div class="wrapper">
@@ -80,10 +83,6 @@
                 </ul>
               </div>
             </section>
-          </div>
-        </div>
-        <div class="right-col">
-          <div class="right-col__wrapper">
             <section id="skills" class="skills card">
               <h2 class="card__caption">Professional skills in IT</h2>
               <div class="card__content">
@@ -116,6 +115,10 @@
                 </ul>
               </div>
             </section>
+          </div>
+        </div>
+        <div class="right-col">
+          <div class="right-col__wrapper">
             <section id="projects" class="projects card">
               <h2 class="projects__header card__caption">My Projects</h2>
               <ul class="no-marked-list projects__list" >
@@ -164,6 +167,21 @@
                   </article>
                 </li>
               </ul>
+            </section>
+            <section id="code-example" class="code-example card">
+              <h2 class="code-example__header card__caption">Code example</h2>
+              <details class="card__content">
+                <summary>Find the stray number</summary>
+                <pre>
+                  <code class="html">
+  function stray(numbers) {
+    numbers.sort();
+    let n = numbers.filter(el => el === numbers[0])
+    return n.length === 1 ? numbers[0] : numbers[numbers.length - 1];
+  }
+                  </code>
+                </pre>
+              </details>
             </section>
             <section id="work-experience" class="work-experience card">
               <h2 class="card__caption">Work experience</h2>

@@ -99,13 +99,10 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 80%;
-  /* max-width: 1024px; */
-  /* min-width: 320px; */
-  /* min-height: 100vh; */
+  max-width: 1000px;
   margin: 20px auto;
   border: 5px solid rgb(94, 83, 115);
   border-radius: 10px;
-  /* overflow: auto; */
 }
 
 .header h1 {
@@ -384,6 +381,14 @@ footer__wrapper-rows {
   color: rgb(94, 83, 115);
 }
 
+.projects__item:last-child {
+  margin-bottom: 50px;
+}
+
+.code-example pre {
+  max-width: 100%;
+}
+
 /* использую универсальный BEM-блок table для стилизации таблиц */
 /* убираю двойные линии border, задав border-collapse для всей таблицы */
 .table {
@@ -441,6 +446,7 @@ footer__wrapper-rows {
   .my-photo,
   .profile,
   .projects,
+  .code-example,
   .education,
   .contact,
   .skills,
@@ -452,8 +458,13 @@ footer__wrapper-rows {
   .my-photo,
   .profile,
   .projects,
+  .code-example,
   .education {
     background-color: rgb(24, 181, 164, .5);
+  }
+
+  .projects__item:last-child {
+    margin-bottom: 0;
   }
 
   .my-photo {
@@ -483,6 +494,7 @@ footer__wrapper-rows {
     flex-direction: column;
   }
 
+  /* реализую адаптив для таблиц */
   .table th {
     padding: 5px;
   }
@@ -499,5 +511,9 @@ footer__wrapper-rows {
   .table td:before {
     content: attr(aria–label);
     float: left;
+  }
+
+  .click-here__img {
+    width: 80%;
   }
 }
