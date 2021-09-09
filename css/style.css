@@ -158,7 +158,7 @@ h3 {
 .header {
   flex: 0 1 auto;
   padding: 10px 20px;
-  background-color:rgb(228, 228, 228);;
+  background-color:rgb(238, 238, 238);;
 }
 
 /* разбиваю footer на flex-блоки: 1)горизонтальный flex: блок со ссылками и датой; 2)flex-блок со ссылками содержит 3 вертикальные колонки для каждой ссылки*/
@@ -195,6 +195,10 @@ footer__wrapper-rows {
   display: block;
   width: 40%;
   margin: 0 auto;
+}
+
+.click-here__img--rss {
+  width: 80%;
 }
 
 /* === main === */
@@ -506,14 +510,5 @@ footer__wrapper-rows {
   .table td {
     border-bottom: none;
     display: block;
-  }
-
-  .table td:before {
-    content: attr(aria–label);
-    float: left;
-  }
-
-  .click-here__img {
-    width: 80%;
   }
 }
