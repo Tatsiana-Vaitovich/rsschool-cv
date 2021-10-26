@@ -1,0 +1,521 @@
+/* подключаю нестандартные шрифты */
+@font-face {
+  font-family: "Raleway Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Regular"),  /*директива local() позволяет ссылаться на шрифт и загружать его, а также использовать шрифты, установленные на устройстве пользователя*/
+  url("/fonts/raleway-regular-webfont.woff2") format("woff2"),
+  url("/fonts/raleway-regular-webfont.woff") format("woff"),
+  url("/fonts/raleway-regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Bold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway Bold"),
+  url("../fonts/raleway-bold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-bold-webfont.woff") format("woff"),
+  url("../fonts/raleway-bold-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway light";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway light"),
+  url("../fonts/raleway-light-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-light-webfont.woff") format("woff"),
+  url("../fonts/raleway-light-webfont.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Raleway Semibold";
+  font-weight: normal;
+  font-style: normal;
+  src: local("Raleway SemiBold"),
+  url("../fonts/raleway-semibold-webfont.woff2") format("woff2"),
+  url("../fonts/raleway-semibold-webfont.woff") format("woff"),
+  url("../fonts/raleway-semibold-webfont.ttf") format("ttf");
+}
+
+/* устанавливаю общие стили для элементов */
+/* для универсальности использую относитльный размер em для типографики */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* свойство используется для плавной прокрутки страницы при использвании якорей */
+}
+
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin-top: -1px;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  margin-left: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.overall {
+  /* width: 100%; */
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "Raleway Regular", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-weight: normal;
+  text-align: left;
+  color: rgb(94, 83, 115);
+}
+
+h1 {
+  font-family: "Raleway Bold";
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: "Raleway Semibold";
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+/* центрирую основное содержимое в окне браузера */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  border: 5px solid rgb(94, 83, 115);
+  border-radius: 10px;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+/* .menu--coll {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-between;
+  max-height: 100%;
+  padding-inline-start: 0;
+} */
+
+.menu__item {
+  display: inline-block;
+}
+
+.menu__item:last-child {
+  padding-right: 0;
+}
+
+.menu__link {
+  display: inline-block;
+  padding: 5px;
+  font-family: "Raleway Bold";
+  text-decoration: none;
+  transition-property: color;
+}
+
+.menu__link:focus-visible {
+  outline: 3px solid
+}
+
+.main {
+  flex: 1 1 auto;
+  border-top: 3px solid rgb(94, 83, 115);
+  border-bottom: 3px solid rgb(94, 83, 115);
+}
+
+/* === footer === */
+
+.footer,
+.header {
+  flex: 0 1 auto;
+  padding: 10px 20px;
+  background-color:rgb(238, 238, 238);;
+}
+
+/* разбиваю footer на flex-блоки: 1)горизонтальный flex: блок со ссылками и датой; 2)flex-блок со ссылками содержит 3 вертикальные колонки для каждой ссылки*/
+footer__wrapper-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__data {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer__wrapper-col {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  /* padding: 10px; */
+}
+
+.footer__col {
+  flex: 0 0 20%;
+}
+
+/* для стилизации ссылок использую универсальный BEM-блок */
+.click-here {
+  display: block;
+  padding: 5px;
+}
+
+.click-here__img {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+}
+
+.click-here__img--rss {
+  width: 80%;
+}
+
+/* === main === */
+
+/* разбиваю основную часть на 2 вертикальные колонки */
+.columns {
+  display: flex;
+}
+
+.left-col,
+.right-col {
+  padding: 40px 0;
+}
+
+.left-col {
+  width: 40%;
+  min-width: 250px;
+  background-color: rgba(24, 181, 164, .5);
+}
+
+.right-col {
+  width: 60%;
+}
+
+/* убираю нижний отступ у последнего элемна в колонке */
+.right-col .card:nth-last-child(-n+1) .card__content,
+.left-col .card:nth-last-child(-n+1) .card__content {
+  margin-bottom: 0;
+}
+
+/* центрирую содержимое в колонках */
+.right-col__wrapper,
+.left-col__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.my-photo {
+  width: 80%;
+  margin: 0 auto 25px auto;
+}
+
+/* задаю стили для фото */
+.my-photo__img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(236, 232, 157);
+  border-radius: 50%;
+}
+
+.my-photo__caption {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+/* использую универсальный BEM-блок card для каждого пункта CV */
+.card__caption {
+  margin-bottom: 25px;
+}
+
+.card-project {
+  display: flex;
+  gap: 10px;
+  /* width: 80%;
+  margin: 0 auto; */
+}
+
+.card-project__link{
+  flex-basis: calc(40% - 10px);
+  position: relative;
+  min-height: 100px;
+  overflow: hidden;
+}
+
+.card-project__img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateY(-50%);
+}
+
+.card-project__content {
+  flex-basis: calc(60% - 10px);
+}
+.card__caption {
+  display: block;
+}
+
+/* добавляю черту под заголовком пункта */
+.card__caption::after {
+  content: "";
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  border-bottom: 5px solid rgb(236, 232, 157);
+}
+
+.card__content {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-family: "Raleway Regular";
+  line-height: 1.5;
+  color: rgb(94, 83, 115);
+}
+
+/* использую универсальный BEM-блок no-marked-list для стилизации списков, в которых убираю маркеры по умолчанию и использую кастомное оформление */
+.no-marked-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.no-marked-list:last-child {
+  margin-bottom: 0;
+}
+
+.no-marked-list__item {
+  margin-bottom: 15px;
+}
+
+.no-marked-list__text {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* также как для пунктов маркированного списка, добавляю маркер "рука" для ссылки на my projects */
+.no-marked-list__text::before,
+.projects__link::before {
+  content: "";
+  display: block;
+  width: 1.3em;
+  height: 1.3em;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.no-marked-list__text--e-mail::before {
+  background-image: url("../img/icon-e-mail.png");
+}
+
+.no-marked-list__text--github::before {
+  background-image: url("../img/icon-github.png");
+}
+
+.no-marked-list__text--address::before {
+  background-image: url("../img/icon-map-pin.png");
+}
+
+.no-marked-list__text--tick::before {
+  background-image: url("../img/icon-tick.png");
+}
+
+/* стилизую ссылку на my projects */
+/* для доступности добавляют псевдоклассы :hover :focus для интерактивных элементов + все эти элементы подписаны (использую в разметке заголовки или атрибут aria-label */
+.menu__link:hover,
+.menu__link:active,
+.menu__link:focus-visible,
+.click-here:hover,
+.click-here:active,
+.click-here:focus-visible {
+  color:rgb(94, 83, 115);
+  background: rgb(236, 232, 157);
+  outline: 2px solid rgb(94, 83, 115);
+}
+
+.card-project__link:hover,
+.card-project__link:active,
+.card-project__link:focus-visible {
+  color: rgb(94, 83, 115);
+  outline: 2px solid rgb(94, 83, 115);
+}
+
+.menu__link:visited,
+.menu__link:link {
+  color: rgb(94, 83, 115);
+}
+
+.projects__item:last-child {
+  margin-bottom: 50px;
+}
+
+.code-example pre {
+  max-width: 100%;
+}
+
+/* использую универсальный BEM-блок table для стилизации таблиц */
+/* убираю двойные линии border, задав border-collapse для всей таблицы */
+.table {
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 2px solid rgb(94, 83, 115);
+}
+
+.table tr:nth-last-child(-n+1) td {
+  border-bottom: none;
+}
+
+.table tr td:nth-child(1) {
+  font-weight: bold;
+}
+
+/* для блока languages использую стандартные маркеры */
+.languages ul {
+  margin-left: 20px;
+  font-weight: bold;
+  list-style-type: square;
+}
+
+.languages span {
+  font-weight: normal;
+}
+
+/* добавляю адаптив */
+@media screen and (max-width: 768px) {
+  .columns {
+    display: block;
+  }
+
+  .left-col,
+  .right-col {
+    width: 100%;
+    padding: 0;
+  }
+
+  .left-col__wrapper,
+  .right-col__wrapper {
+    width: 100%;
+  }
+
+  .left-col {
+    background-color: transparent;
+  }
+
+  .my-photo,
+  .profile,
+  .projects,
+  .code-example,
+  .education,
+  .contact,
+  .skills,
+  .work-experience,
+  .languages {
+    padding: 20px;
+  }
+
+  .my-photo,
+  .profile,
+  .projects,
+  .code-example,
+  .education {
+    background-color: rgb(24, 181, 164, .5);
+  }
+
+  .projects__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .my-photo {
+    width: 100%;
+    margin:0;
+  }
+
+  .my-photo__img {
+    width: 80%;
+  }
+
+  .card__content {
+    margin-bottom: 0;
+  }
+
+  .skills .no-marked-list__item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .card-project {
+    flex-direction: column;
+  }
+
+  /* реализую адаптив для таблиц */
+  .table th {
+    padding: 5px;
+  }
+
+  .table tr {
+    display: block;
+  }
+
+  .table td {
+    border-bottom: none;
+    display: block;
+  }
+}
